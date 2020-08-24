@@ -1,0 +1,42 @@
+swagger: '2.0'
+info:
+  title: adt
+  version: 0.0.1
+schemes:
+  - http
+basePath: /adt/
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /patient:
+    post:
+      tags:
+        - patient
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: patient.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: true
+          schema:
+            $ref: '#/definitions/patient'
+      responses:
+        '201':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/patient'
+definitions:
+  patient:
+    description: ''
+    type: object
+    properties:
+      input:
+        type: string
+      payload:
+        type: object
+        properties: {}
+    additionalProperties: false
+host: 'adt-http-integration.upmcibmcp4i-upmchealths-73aebe06726e634c608c4167edcc2aeb-0000.sjc03.containers.appdomain.cloud:80'

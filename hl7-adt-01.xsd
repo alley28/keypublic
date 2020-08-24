@@ -1,0 +1,297 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:hl7-org:v2xml" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ADT_A01">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MSH">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="MSH.1.FieldSeparator"/>
+              <xs:element name="MSH.2.ServiceString">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="ComponentSeparator"/>
+                    <xs:element type="xs:string" name="RepeatSeparator"/>
+                    <xs:element type="xs:string" name="EscapeCharacter"/>
+                    <xs:element type="xs:string" name="SubComponentSeparator"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MSH.3.SendingApplication">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="HD.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MSH.4.SendingFacility">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="HD.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MSH.5.ReceivingApplication">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="HD.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MSH.6.ReceivingFacility">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="HD.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:long" name="MSH.7.DateTimeOfMessage"/>
+              <xs:element name="MSH.9.MessageType">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="MSG.1"/>
+                    <xs:element type="xs:string" name="MSG.2"/>
+                    <xs:element type="xs:byte" name="MSG.3"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="MSH.10.MessageControlID"/>
+              <xs:element name="MSH.11.ProcessingID">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="PT.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MSH.12.VersionID">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:float" name="VID.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EVN">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="EVN.1.EventTypeCode"/>
+              <xs:element type="xs:long" name="EVN.2.RecordedDateTime"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PID">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="PID.1.SetIDPID"/>
+              <xs:element name="PID.2.PatientID">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="CX.1"/>
+                    <xs:element name="CX.4">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="HD.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="CX.5"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.3.PatientIdentifierList">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="CX.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.5.PatientName">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="XPN.1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="FN.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="XPN.2"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:int" name="PID.7.DateTimeOfBirth"/>
+              <xs:element name="PID.8.AdministrativeSex">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.10.Race">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.11.PatientAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="XAD.1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="SAD.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="XAD.3"/>
+                    <xs:element type="xs:string" name="XAD.4"/>
+                    <xs:element type="xs:int" name="XAD.5"/>
+                    <xs:element type="xs:string" name="XAD.6"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.13.PhoneNumberHome">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="XTN.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.16.MaritalStatus">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.17.Religion">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PID.18.PatientAccountNumber">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="CX.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NK1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="NK1.1.SetIDNK1"/>
+              <xs:element name="NK1.2.Name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="XPN.1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="FN.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="XPN.2"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NK1.3.Relationship">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="NK1.5.PhoneNumber">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="XTN.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="NK1.9.EndDate"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PV1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="PV1.1.SetIDPV1"/>
+              <xs:element name="PV1.2.PatientClass">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PV1.3.AssignedPatientLocation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PL.1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:short" name="HD.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PL.2">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:short" name="HD.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PL.3">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="HD.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PV1.7.AttendingDoctor">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:int" name="XCN.1"/>
+                    <xs:element name="XCN.2">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="FN.1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="XCN.3"/>
+                    <xs:element type="xs:string" name="XCN.4"/>
+                    <xs:element type="xs:string" name="XCN.6"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PV1.14.AdmitSource">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PV1.15.AmbulatoryStatus">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="CWE.1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
